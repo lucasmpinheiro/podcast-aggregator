@@ -10,7 +10,7 @@ export class HeroService {
     private itunesUrl = 'https://itunes.apple.com/search';
 
     getPodcastsList(term: string) {
-        let queryUrl: string = this.itunesUrl + '?media=podcast&term=' + term;
+        let queryUrl: string =  '${this.itunesUrl}?media=podcast&term=${term}';
         return this.http.get(queryUrl);
     }
 }
