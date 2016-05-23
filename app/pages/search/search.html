@@ -2,22 +2,18 @@
     <button menuToggle>
         <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>Search Podcasts</ion-title>
+    <!-- <ion-title>Search Podcasts</ion-title> -->
+    <ion-searchbar [(ng-model)]="searchTerm" (input)="searchPodcasts($event)" fixed></ion-searchbar>
 </ion-navbar>
 
 <ion-content>
-    <!-- <ion-list>
-        <button ion-item *ngFor="#item of items" (click)="itemTapped($event, item)">
-            <ion-icon name="{{item.icon}}" item-left></ion-icon>
-                {{item.title}}
-            <div class="item-note" item-right>
-                {{item.note}}
-            </div>
-        </button>
+    <ion-list>
+        <ion-item *ngFor="#result of results">
+            <ion-thumbnail item-left>
+                <img src="{{result.artworkUrl100}}" />
+            </ion-thumbnail>
+            <p>{{result.collectionName}}</p>
+            <p>{{result.feedUrl}}</p>
+        </ion-item>
     </ion-list>
-    <div *ngIf="selectedItem" padding>
-        You navigated here from
-        <b>{{selectedItem.title}}</b>
-    </div> -->
-    {{searchResult}}
 </ion-content>
