@@ -8,7 +8,7 @@ import {JSONP_PROVIDERS} from 'angular2/http';
     providers: [ItunesService, JSONP_PROVIDERS]
 })
 export class SearchPage {
-    results: string;
+    results: Array<Object>;
     // itunes: ItunesService;
 
     constructor(
@@ -17,12 +17,14 @@ export class SearchPage {
         private itunes: ItunesService
     ) { }
 
-    searchPodcasts(searchbar) {
-        let term = searchbar.value.trim().toLowerCase();
+    searchPodcasts(event) {
+        let term = event.srcElement.value.trim().toLowerCase();
 
         // If no term was searched for, do nothing.
-        if (term == '')
+        if (term == '') {
+            this.results = [];
             return;
+        }
 
         this.itunes.fetchPodcastsList(term).subscribe(res => {
             this.results = res.json().results;

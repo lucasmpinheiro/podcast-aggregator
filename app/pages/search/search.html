@@ -3,7 +3,7 @@
         <ion-icon name="menu"></ion-icon>
     </button>
     <!-- <ion-title>Search Podcasts</ion-title> -->
-    <ion-searchbar [(ng-model)]="searchTerm" (input)="searchPodcasts($event)" fixed></ion-searchbar>
+    <ion-searchbar [(ng-model)]="searchTerm" (search)="searchPodcasts($event)" autocorrect="off"></ion-searchbar>
 </ion-navbar>
 
 <ion-content>

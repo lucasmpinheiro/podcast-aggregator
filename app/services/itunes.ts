@@ -8,10 +8,14 @@ export class ItunesService {
     constructor(private jsonp: Jsonp) { }
 
     // Itunes search URL.
-    private itunesUrl = 'https://itunes.apple.com/search';
+    private itunesUrl: string = 'https://itunes.apple.com/search';
+
+    // Search parameters.
+    private searchParams: string = 'media=podcast&attribute=titleTerm';
 
     fetchPodcastsList(term: string) {
-        let queryUrl: string =  this.itunesUrl + '?media=podcast&term=' + term + '&callback=JSONP_CALLBACK';
+        let queryUrl: string =  this.itunesUrl + '?' + this.searchParams
+                                + '&term=' + term + '&callback=JSONP_CALLBACK';
         return this.jsonp.request(queryUrl);
     }
 }
