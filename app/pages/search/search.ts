@@ -8,17 +8,15 @@ import {JSONP_PROVIDERS} from 'angular2/http';
     providers: [ItunesService, JSONP_PROVIDERS]
 })
 export class SearchPage {
-    searchResult: string = '';
+    searchResult: string;
 
     constructor(
         private nav: NavController,
         private navParams: NavParams,
         private itunes: ItunesService
     ) {
-        itunes.getPodcastsList('nerdcast').subscribe(
-            data => { this.searchResult = JSON.stringify(data.json()); },
-            err => console.error(err),
-            () => console.log('done')
-        )
+        itunes.fetchPodcastsList('nerdcast').subscribe(res => {
+            this.searchResult = JSON.stringify(res.json());
+        });
     }
 }
