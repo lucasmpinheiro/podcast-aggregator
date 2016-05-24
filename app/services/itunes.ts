@@ -11,7 +11,7 @@ export class ItunesService {
     private itunesUrl: string = 'https://itunes.apple.com/search';
 
     // Search parameters.
-    private searchParams: string = 'media=podcast&attribute=titleTerm';
+    private searchParams: string = 'media=podcast&attribute=titleTerm&entity=podcast';
 
     fetchPodcastsList(term: string) {
         let queryUrl: string =  this.itunesUrl + '?' + this.searchParams

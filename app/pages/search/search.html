@@ -8,12 +8,12 @@
 
 <ion-content>
     <ion-list>
-        <ion-item *ngFor="#result of results">
+        <button ion-item *ngFor="#result of results" (click)="itemTapped($event, result)">
             <ion-thumbnail item-left>
                 <img src="{{result.artworkUrl100}}" />
             </ion-thumbnail>
             <p>{{result.collectionName}}</p>
             <p>{{result.feedUrl}}</p>
-        </ion-item>
+        </button>
     </ion-list>
 </ion-content>

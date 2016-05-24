@@ -1,4 +1,5 @@
 import {Page, NavController, NavParams, Loading} from 'ionic-angular';
+import {PodcastDetailsPage} from '../podcast-details/podcast-details';
 import {ItunesService} from '../../services/itunes';
 import {JSONP_PROVIDERS} from 'angular2/http';
 
@@ -38,6 +39,12 @@ export class SearchPage {
 
             // Dismiss the loading overlay.
             loading.dismiss();
+        });
+    }
+
+    itemTapped(event, item) {
+        this.nav.push(PodcastDetailsPage, {
+            item: item
         });
     }
 }
