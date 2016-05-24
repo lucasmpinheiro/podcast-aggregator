@@ -1,4 +1,4 @@
-import {Page, NavController, NavParams} from 'ionic-angular';
+import {Page, NavController, NavParams, Loading} from 'ionic-angular';
 import {ItunesService} from '../../services/itunes';
 import {JSONP_PROVIDERS} from 'angular2/http';
 
@@ -26,9 +26,18 @@ export class SearchPage {
             return;
         }
 
+        // Create and show a loading overlay.
+        let loading = Loading.create({
+            content: 'Searching...'
+        });
+        this.nav.present(loading);
+
         this.itunes.fetchPodcastsList(term).subscribe(res => {
             this.results = res.json().results;
             console.log(this.results);
+
+            // Dismiss the loading overlay.
+            loading.dismiss();
         });
     }
 }
