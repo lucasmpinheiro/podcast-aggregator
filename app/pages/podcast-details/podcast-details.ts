@@ -1,4 +1,5 @@
 import {Page, NavController, NavParams} from 'ionic-angular';
+import {EpisodeListPage} from '../episode-list/episode-list';
 
 
 @Page({
@@ -8,8 +9,13 @@ export class PodcastDetailsPage {
     podcast: Object;
 
     constructor(private nav: NavController, navParams: NavParams) {
-        // If we navigated to this page, we will have an item
-        // available as a nav param.
-        this.podcast = navParams.get('item');
+        // Get podcast info from navbar parameter.
+        this.podcast = navParams.get('podcast');
+    }
+
+    goToEpisodeList(): void {
+        this.nav.push(EpisodeListPage, {
+            podcast: this.podcast
+        });
     }
 }

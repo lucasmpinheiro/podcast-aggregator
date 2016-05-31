@@ -66,7 +66,7 @@ export class SearchPage {
 
     itemTapped(event, item) {
         this.nav.push(PodcastDetailsPage, {
-            item: item
+            podcast: item
         });
     }
 }

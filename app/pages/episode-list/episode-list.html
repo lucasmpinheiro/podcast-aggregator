@@ -1,0 +1,19 @@
+<ion-navbar *navbar>
+    <button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+    </button>
+    <!-- <ion-title>{{podcast.collectionName}}</ion-title> -->
+    <ion-title>All Episodes</ion-title>
+</ion-navbar>
+
+<ion-content>
+    <ion-list>
+        {{episodes}}
+        <!-- <ion-item *ngFor="#epi of episodes">
+            <!-- <ion-thumbnail item-left>
+                <img src="{{result.artworkUrl100}}" />
+            </ion-thumbnail> --
+            <h2>{{epi.title}}</h2>
+        </ion-item> -->
+    </ion-list>
+</ion-content>
