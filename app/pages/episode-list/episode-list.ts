@@ -1,5 +1,10 @@
+'use strict';
+
 import {Page, NavController, NavParams, Loading} from 'ionic-angular';
 import {FeedReaderService} from '../../services/feed-reader';
+
+let x2js = new (require('x2js'))();
+// declare var x2js: any;
 
 
 @Page({
@@ -8,7 +13,7 @@ import {FeedReaderService} from '../../services/feed-reader';
 })
 export class EpisodeListPage {
     podcast;
-    episodes;
+    episodes: Array<Object>;
 
     constructor(
         private nav: NavController,
@@ -28,13 +33,9 @@ export class EpisodeListPage {
         // Fetch feed data.
         feedReader.getFeedContent(this.podcast.feedUrl)
             .subscribe(res => {
-                console.log(res.text());
-
-                let xmlDoc: Document = (new DOMParser())
-                                .parseFromString(res.text(), 'text/xml');
-
-                let value = xmlDoc.getElementsByTagName('channel')[0].childNodes[0].nodeValue;
-                console.log(value);
+                let json = x2js.xml2js(res.text());
+                console.log(json);
+                this.episodes = json.rss.channel.item;
 
                 // Dismiss the loading overlay.
                 setTimeout(()=>{

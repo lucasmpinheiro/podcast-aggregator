@@ -8,12 +8,12 @@
 
 <ion-content>
     <ion-list>
-        {{episodes}}
-        <!-- <ion-item *ngFor="#epi of episodes">
-            <!-- <ion-thumbnail item-left>
-                <img src="{{result.artworkUrl100}}" />
-            </ion-thumbnail> --
+        <ion-item *ngFor="#epi of episodes">
+            <ion-thumbnail item-left>
+                <!-- <img src="{{epi.image._href}}" /> -->
+                <img src="{{podcast.artworkUrl600}}" />
+            </ion-thumbnail>
             <h2>{{epi.title}}</h2>
-        </ion-item> -->
+        </ion-item>
     </ion-list>
 </ion-content>
