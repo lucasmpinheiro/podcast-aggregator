@@ -2,14 +2,14 @@
 
 import {Page, NavController, NavParams, Loading} from 'ionic-angular';
 import {FeedReaderService} from '../../services/feed-reader';
+import {TransferService} from '../../services/transfer';
 
 let x2js = new (require('x2js'))();
-// declare var x2js: any;
 
 
 @Page({
     templateUrl: 'build/pages/episode-list/episode-list.html',
-    providers: [FeedReaderService]
+    providers: [FeedReaderService, TransferService]
 })
 export class EpisodeListPage {
     podcast;
@@ -18,7 +18,8 @@ export class EpisodeListPage {
     constructor(
         private nav: NavController,
         private navParams: NavParams,
-        private feedReader: FeedReaderService
+        private feedReader: FeedReaderService,
+        private transfer: TransferService
     ) {
         // Create and show a loading overlay.
         let loading = Loading.create({
@@ -42,5 +43,9 @@ export class EpisodeListPage {
                     loading.dismiss();
                 }, 1);
             });
+    }
+
+    epiTapped(event, epi) {
+        this.transfer.downloadPodcastEpi(epi.content._url);
     }
 }

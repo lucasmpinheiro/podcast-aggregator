@@ -8,12 +8,12 @@
 
 <ion-content>
     <ion-list>
-        <ion-item *ngFor="#epi of episodes">
+        <button ion-item *ngFor="#epi of episodes" (click)="epiTapped($event, epi)">
             <ion-thumbnail item-left>
                 <!-- <img src="{{epi.image._href}}" /> -->
                 <img src="{{podcast.artworkUrl600}}" />
             </ion-thumbnail>
             <h2>{{epi.title}}</h2>
-        </ion-item>
+        </button>
     </ion-list>
 </ion-content>
