@@ -1,3 +1,4 @@
+/** Podcast model. */
 export class PodcastModel {
     title: string;
     feedUrl: string;
