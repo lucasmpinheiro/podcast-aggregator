@@ -1,0 +1,19 @@
+<ion-navbar *navbar>
+    <button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+    </button>
+    <!-- <ion-title>Search Podcasts</ion-title> -->
+    <ion-searchbar [(ng-model)]="searchTerm" (search)="searchPodcasts($event)" autocorrect="off"></ion-searchbar>
+</ion-navbar>
+
+<ion-content>
+    <ion-list>
+        <button ion-item *ngFor="#result of results" (click)="itemTapped($event, result)">
+            <ion-thumbnail item-left>
+                <img src="{{result.artworkUrl100}}" />
+            </ion-thumbnail>
+            <h2>{{result.collectionName}}</h2>
+            <p>{{result.feedUrl}}</p>
+        </button>
+    </ion-list>
+</ion-content>

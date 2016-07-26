@@ -1,0 +1,20 @@
+<ion-navbar *navbar>
+    <button menuToggle *ngIf="!podcast">
+        <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Podcast Details</ion-title>
+</ion-navbar>
+
+<ion-content>
+    <ion-card *ngIf="podcast" class="selection">
+        <img src="{{podcast.artworkUrl600}}" />
+        <ion-card-content>
+            <ion-card-title>
+                {{podcast.collectionName}}
+            </ion-card-title>
+
+            <button block (click)="goToEpisodeList()">View Episodes</button>
+        </ion-card-content>
+
+    </ion-card>
+</ion-content>

@@ -1,21 +1,18 @@
 {
-  "compilerOptions": {
-    "target": "es5",
-    "module": "commonjs",
-    "emitDecoratorMetadata": true,
-    "experimentalDecorators": true
-  },
-  "filesGlob": [
-    "**/*.ts",
-    "!node_modules/**/*"
-  ],
-  "exclude": [
-    "node_modules",
-    "typings/main",
-    "typings/main.d.ts"
-  ],
-  "compileOnSave": false,
-  "atom": {
-    "rewriteTsconfig": false
-  }
+    "compilerOptions": {
+        "outDir": "app",
+        "rootDir": "app",
+        "module": "commonjs",
+        "target": "es5",
+        "sourceMap": true,
+        "experimentalDecorators": true,
+        "emitDecoratorMetadata": true,
+        "removeComments": false,
+        "noEmitHelpers": true,
+        "noEmitOnError": true
+    },
+    "exclude": [
+        "node_modules",
+        "platforms"
+    ]
 }

@@ -1,0 +1,8 @@
+{
+  "resolution": "main",
+  "tree": {
+    "src": "https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/3ff4c66db0a8abe7b54bba18a034e4219c24d6a7/cordova/plugins/FileTransfer.d.ts",
+    "raw": "registry:dt/cordova/plugins/filetransfer#0.0.0+20160329171220",
+    "typings": "https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/3ff4c66db0a8abe7b54bba18a034e4219c24d6a7/cordova/plugins/FileTransfer.d.ts"
+  }
+}
