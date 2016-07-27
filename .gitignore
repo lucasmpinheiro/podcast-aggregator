@@ -5,6 +5,7 @@
 node_modules/
 platforms/
 app/**/*.js
+app/**/*.map
 hooks/
 lib/
 tmp/
