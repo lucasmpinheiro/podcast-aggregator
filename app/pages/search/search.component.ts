@@ -2,13 +2,16 @@
 import {Component, AfterViewInit, ViewChild, ElementRef} from '@angular/core';
 import {Color} from 'color';
 import {SearchBar} from 'ui/search-bar';
+import {Image} from 'ui/image';
+import {ActivityIndicator} from 'ui/activity-indicator';
 import {ObservableArray} from 'data/observable-array';
 import {ItunesService} from '../../shared/itunes/itunes.service';
 
 @Component({
-    selector: "search",
+    selector: 'search',
     templateUrl: 'pages/search/search.html',
-    providers: [ItunesService]
+    providers: [ItunesService],
+    styleUrls: ['pages/search/search-common.css']
 })
 export class SearchPage implements AfterViewInit {
     // local: Storage;

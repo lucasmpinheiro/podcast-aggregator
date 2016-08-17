@@ -4,7 +4,23 @@
 
     <ListView row="1" [items]="results">
         <template let-item="item">
-            <Label [text]="item.collectionName"></Label>
+            <GridLayout rows="auto, 80" columns="80, *" class="list-item">
+                <Label colSpan="2" row="0"
+                    [text]="item.collectionName" fontSize="17"
+                    horizontalAlignment="left">
+                </Label>
+                <Image col="0" row="1"
+                    [src]="item.artworkUrl100" height="80" stretch="aspectFill"
+                    class="artwork">
+                </Image>
+                <StackLayout col="1" row="1" horizontalAlignment="left">
+                    <Label
+                        [text]="item.trackCount + (item.trackCount > 1 ? ' Episodes' : ' Episode')"
+                        verticalAlignment="top" horizontalAlignment="left">
+                    </Label>
+                    <Label text="Subscribe" fontSize="18"></Label>
+                </StackLayout>
+            </GridLayout>
         </template>
     </ListView>
 
