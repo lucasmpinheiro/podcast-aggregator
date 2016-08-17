@@ -1,19 +1,17 @@
 <GridLayout rows="auto, *">
 
-    <StackLayout row="0">
-        <SearchBar #searchBar hint="Search" [(ngModel)]='searchTerm'></SearchBar>
-        <!-- <TextField #searchField [(ngModel)]="grocery" hint="Enter a podcast name" col="0"></TextField>
-        <Image src="res://add" (tap)="add()" col="1"></Image> -->
+    <SearchBar row="0" #searchBar hint="Search" [(ngModel)]="searchTerm"></SearchBar>
 
-        <TextField [(ngModel)]='results[0]'></TextField>
-    </StackLayout>
-
-    <ListView [items]="results" row="1">
+    <ListView row="1" [items]="results">
         <template let-item="item">
             <Label [text]="item.collectionName"></Label>
         </template>
     </ListView>
 
-    <ActivityIndicator [busy]="isLoading" [visibility]="isLoading ? 'visible' : 'collapse'" row="1" horizontalAlignment="center" verticalAlignment="center"></ActivityIndicator>
+    <ActivityIndicator row="1"
+        [busy]="isLoading"
+        [visibility]="isLoading ? 'visible' : 'collapse'"
+        horizontalAlignment="center" verticalAlignment="center">
+    </ActivityIndicator>
 
 </GridLayout>
