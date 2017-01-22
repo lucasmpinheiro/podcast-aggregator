@@ -8,7 +8,7 @@
   ],
   "extends": ["eslint:recommended", "plugin:react/recommended"],
   "parserOptions": {
-    "ecmaVersion": 6,
+    "ecmaVersion": 8,
     "sourceType": "module",
     "ecmaFeatures": {
       "jsx": true
@@ -31,6 +31,7 @@
     "comma-dangle": [ "error", "always-multiline" ],
     "no-duplicate-imports": ["error", { "includeExports": true }],
     "no-useless-rename": "error",
+    "no-console": [ "error", { "allow": ["warn", "error"] } ],
 
     "no-irregular-whitespace": "error",
     "no-whitespace-before-property": "error",
