@@ -14,7 +14,9 @@
       "jsx": true
     }
   },
-  "globals": {},
+  "globals": {
+    "fetch": true
+  },
   "rules": {
     "max-len": ["error", {
       "code": 100,
