@@ -10,18 +10,13 @@ import {
 
 import ItunesService from './shared/services/itunes';
 
-/**
- * Application entry point.
- */
-export default class App extends Component {
+export default class PodcastList extends Component {
     constructor(props) {
         super(props);
         this.state = {
             dataSource: new ListView.DataSource({
                 rowHasChanged: (r1, r2) => r1 !== r2,
             }),
-            loaded: false,
-            searchText: '',
         };
     }
 
