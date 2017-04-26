@@ -29,9 +29,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-               BuildableName = "ReactNativeTest.app"
-               BlueprintName = "ReactNativeTest"
-               ReferencedContainer = "container:ReactNativeTest.xcodeproj">
+               BuildableName = "PodcastAggregator.app"
+               BlueprintName = "PodcastAggregator"
+               ReferencedContainer = "container:PodcastAggregator.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry
@@ -43,9 +43,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "00E356ED1AD99517003FC87E"
-               BuildableName = "ReactNativeTestTests.xctest"
-               BlueprintName = "ReactNativeTestTests"
-               ReferencedContainer = "container:ReactNativeTest.xcodeproj">
+               BuildableName = "PodcastAggregatorTests.xctest"
+               BlueprintName = "PodcastAggregatorTests"
+               ReferencedContainer = "container:PodcastAggregator.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -61,9 +61,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "00E356ED1AD99517003FC87E"
-               BuildableName = "ReactNativeTestTests.xctest"
-               BlueprintName = "ReactNativeTestTests"
-               ReferencedContainer = "container:ReactNativeTest.xcodeproj">
+               BuildableName = "PodcastAggregatorTests.xctest"
+               BlueprintName = "PodcastAggregatorTests"
+               ReferencedContainer = "container:PodcastAggregator.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -71,9 +71,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "ReactNativeTest.app"
-            BlueprintName = "ReactNativeTest"
-            ReferencedContainer = "container:ReactNativeTest.xcodeproj">
+            BuildableName = "PodcastAggregator.app"
+            BlueprintName = "PodcastAggregator"
+            ReferencedContainer = "container:PodcastAggregator.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -94,9 +94,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "ReactNativeTest.app"
-            BlueprintName = "ReactNativeTest"
-            ReferencedContainer = "container:ReactNativeTest.xcodeproj">
+            BuildableName = "PodcastAggregator.app"
+            BlueprintName = "PodcastAggregator"
+            ReferencedContainer = "container:PodcastAggregator.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -113,9 +113,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "ReactNativeTest.app"
-            BlueprintName = "ReactNativeTest"
-            ReferencedContainer = "container:ReactNativeTest.xcodeproj">
+            BuildableName = "PodcastAggregator.app"
+            BlueprintName = "PodcastAggregator"
+            ReferencedContainer = "container:PodcastAggregator.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

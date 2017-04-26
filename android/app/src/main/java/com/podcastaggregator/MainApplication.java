@@ -1,4 +1,4 @@
-package com.reactnativetest;
+package com.podcastaggregator;
 
 import android.app.Application;
 

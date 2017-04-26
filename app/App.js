@@ -44,4 +44,4 @@ const styles = StyleSheet.create({
     },
 });
 
-AppRegistry.registerComponent('ReactNativeTest', () => App);
+AppRegistry.registerComponent('PodcastAggregator', () => Main);
