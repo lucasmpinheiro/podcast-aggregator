@@ -1,5 +1,3 @@
-import fetch from 'fetch';
-
 // Itunes search URL.
 const itunesUrl = 'https://itunes.apple.com/search';
 

@@ -1,15 +1,11 @@
 /* eslint-env jest */
 
 import 'react-native';
-import fetch from 'fetch';
 import ItunesService from '../../../app/shared/services/itunes';
-// import React from 'react';
 
-jest.mock('fetch', () => {
-    return jest.fn(url => Promise.resolve({
-        json: () => Promise.resolve({ results: url }),
-    }));
-});
+fetch = jest.fn(url => Promise.resolve({
+    json: () => Promise.resolve({ results: url }),
+}));
 
 // Itunes search URL.
 const itunesUrl = 'https://itunes.apple.com/search';
@@ -34,12 +30,9 @@ describe('ItunesService', () => {
             expect(fetch).toHaveBeenCalledWith(`${itunesUrl}?${searchParams}&term=test`);
         });
 
-        it('should process the data and return a Promise that resolves to the results', () => {
-            const p = ItunesService.fetchPodcastsList('test');
-            expect(p).toBeInstanceOf(Promise);
-            return p.then(res => {
-                expect(res).toBe(`${itunesUrl}?${searchParams}&term=test`);
-            });
+        it('should process the data and return a Promise that resolves to the results', async () => {
+            const res = await ItunesService.fetchPodcastsList('test');
+            expect(res).toBe(`${itunesUrl}?${searchParams}&term=test`);
         });
     });
 });
