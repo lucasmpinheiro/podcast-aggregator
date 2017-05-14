@@ -1,11 +1,11 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Provider } from 'react-redux';
-import { createStore, applyMiddleware, combineReducers, compose } from 'redux';
+import { createStore, applyMiddleware, compose } from 'redux';
 import thunkMiddleware from 'redux-thunk';
 import { createLogger } from 'redux-logger';
 import reducer from './reducers/index';
 import { AppRegistry } from 'react-native';
-import App from './App';
+import AppContainer from './containers/App';
 
 const loggerMiddleware = createLogger({ predicate: () => __DEV__ });
 
@@ -28,11 +28,11 @@ function configureStore(initialState) {
 // Create the store.
 const store = configureStore({});
 
-const Main = () => (
+const App = () => (
     <Provider store={store}>
-        <App />
+        <AppContainer />
     </Provider>
 );
 
 // Register the app.
-AppRegistry.registerComponent('PodcastAggregator', () => Main);
+AppRegistry.registerComponent('PodcastAggregator', () => App);
