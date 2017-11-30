@@ -12,7 +12,9 @@
     "test": "node node_modules/jest/bin/jest.js --watch"
   },
   "dependencies": {
+    "@expo/vector-icons": "^6.2.0",
     "expo": "^23.0.4",
+    "native-base": "^2.3.3",
     "react": "16.0.0",
     "react-native": "0.50.3",
     "react-redux": "^5.0.4",

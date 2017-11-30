@@ -3,14 +3,19 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
 import {
-    View,
-    ScrollView,
+    Container,
+    Header,
+    Content,
+    Item,
+    Icon,
+    Input,
+    Button,
     Text,
-    StyleSheet,
-} from 'react-native';
+    Spinner,
+    List,
+} from 'native-base';
 
 import PodcastListItem from '../components/podcast/PodcastListItem';
-import SearchBar from '../components/SearchBar';
 
 class Home extends Component {
     constructor(props) {
@@ -29,21 +34,32 @@ class Home extends Component {
 
     render() {
         return (
-            <View style={styles.scene}>
-                <SearchBar
-                    placeholder='Podcast name'
-                    value={this.state.searchTerm}
-                    buttonText='Search'
-                    onChangeText={ searchTerm => this.setState({ searchTerm }) }
-                    onSubmit={ () => this.updatePodcastList() }
-                />
-                <ScrollView style={styles.scrollSection}>
-                    {!this.state.searching && this.props.searchedPodcasts.map(podcast => {
-                        return <PodcastListItem key={podcast.feedUrl} {...podcast} />;
-                    })}
-                    { this.state.searching ? <Text>Searching...</Text> : null }
-                </ScrollView>
-            </View>
+            <Container>
+                <Header searchBar rounded>
+                    {/* <Body>
+                        <Title>Podding</Title>
+                    </Body> */}
+                    <Item>
+                        <Icon name="ios-search" />
+                        <Input placeholder="Search"
+                               value={this.state.searchTerm}
+                               onChangeText={searchTerm => this.setState({ searchTerm })}
+                               onSubmitEditing={() => this.updatePodcastList()} />
+                    </Item>
+
+                    <Button transparent>
+                        <Text>Search</Text>
+                    </Button>
+                </Header>
+
+                <Content>
+                    {this.state.searching
+                        ? <Spinner />
+                        : <List dataArray={this.props.searchedPodcasts}
+                                renderRow={podcast => <PodcastListItem {...podcast} />} />
+                    }
+                </Content>
+            </Container>
         );
     }
 }
@@ -52,17 +68,6 @@ Home.propTypes = {
     fetchPodcasts: PropTypes.func.isRequired,
     searchedPodcasts: PropTypes.array.isRequired,
 };
-
-const styles = StyleSheet.create({
-    scene: {
-        flex: 1,
-    },
-    scrollSection: {
-        paddingTop: 5,
-        paddingBottom: 5,
-        backgroundColor: '#dedede',
-    },
-});
 
 const mapStateToProps = state => ({
     searchedPodcasts: state.searchedPodcasts,
