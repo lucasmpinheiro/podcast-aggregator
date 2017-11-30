@@ -1,4 +1,5 @@
 {
-  "name": "PodcastAggregator",
-  "displayName": "PodcastAggregator"
+  "expo": {
+    "sdkVersion": "23.0.0"
+  }
 }
