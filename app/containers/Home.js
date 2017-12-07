@@ -15,6 +15,9 @@ import {
     List,
 } from 'native-base';
 
+import { setSearchedPodcasts } from '../actions/podcasts';
+import itunes from '../shared/services/itunes';
+
 import PodcastListItem from '../components/podcast/PodcastListItem';
 
 class Home extends Component {
@@ -73,4 +76,11 @@ const mapStateToProps = state => ({
     searchedPodcasts: state.searchedPodcasts,
 });
 
-export default connect(mapStateToProps)(Home);
+const mapDispatchToProps = dispatch => ({
+    fetchPodcasts: async terms => {
+        const list = await itunes.fetchPodcastsList(terms);
+        dispatch(setSearchedPodcasts({ podcasts: list }));
+    },
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Home);
