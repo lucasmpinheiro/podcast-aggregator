@@ -1,11 +1,22 @@
 import React from 'react';
+import { DrawerNavigator } from 'react-navigation';
 import { Root } from 'native-base';
 
-import Home from './containers/Home';
+import Home from './screens/Home';
+import SearchPodcasts from './screens/SearchPodcasts';
+import Sidebar from './components/Sidebar';
+
+const Drawer = DrawerNavigator({
+    Home: { screen: Home },
+    SearchPodcasts: { screen: SearchPodcasts },
+}, {
+    initialRouteName: 'Home',
+    contentComponent: props => <Sidebar {...props} />,
+});
 
 const App = () => (
     <Root>
-        <Home />
+        <Drawer />
     </Root>
 );
 

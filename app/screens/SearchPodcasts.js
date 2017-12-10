@@ -38,9 +38,6 @@ class Home extends Component {
         return (
             <Container>
                 <Header searchBar rounded>
-                    {/* <Body>
-                        <Title>Podding</Title>
-                    </Body> */}
                     <Item>
                         <Icon name="ios-search" />
                         <Input placeholder="Search"
