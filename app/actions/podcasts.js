@@ -10,3 +10,8 @@ export const setSearchedPodcasts = ({ podcasts }) => ({
     type: types.SET_SEARCHED_PODCASTS,
     podcasts,
 });
+
+export const setCurrentPodcast = ({ podcast }) => ({
+    type: types.SET_CURRENT_PODCAST,
+    podcast,
+});
