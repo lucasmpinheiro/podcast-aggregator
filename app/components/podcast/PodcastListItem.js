@@ -10,6 +10,7 @@ class PodcastListItem extends Component {
                 <CardItem
                     cardBody
                     button
+                    onPress={() => this.props.onPress && this.props.onPress()}>
                     <Left>
                         <Thumbnail square large source={{ uri: this.props.artworkUrl100 }} />
                         <Body>
@@ -31,6 +32,7 @@ PodcastListItem.propTypes = {
     artworkUrl100: PropTypes.string.isRequired,
     collectionName: PropTypes.string.isRequired,
     trackCount: PropTypes.number.isRequired,
+    onPress: PropTypes.func,
 };
 
 export default PodcastListItem;

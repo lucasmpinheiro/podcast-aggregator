@@ -15,11 +15,11 @@ import {
     List,
 } from 'native-base';
 
-import { fetchPodcasts } from '../actions/podcasts';
+import { fetchPodcasts, setCurrentPodcast } from '../actions/podcasts';
 
 import PodcastListItem from '../components/podcast/PodcastListItem';
 
-class Home extends Component {
+class SearchPodcasts extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -32,6 +32,11 @@ class Home extends Component {
         this.setState({ searching: true });
         await this.props.fetchPodcasts(this.state.searchTerm);
         this.setState({ searching: false });
+    }
+
+    showPodcastDetails(podcast) {
+        this.props.setCurrentPodcast({ podcast });
+        this.props.navigation.navigate('ShowPodcast');
     }
 
     render() {
@@ -55,7 +60,12 @@ class Home extends Component {
                     {this.state.searching
                         ? <Spinner />
                         : <List dataArray={this.props.searchedPodcasts}
-                                renderRow={podcast => <PodcastListItem {...podcast} />} />
+                                renderRow={podcast =>
+                                    <PodcastListItem
+                                        {...podcast}
+                                        onPress={() => this.showPodcastDetails(podcast)}
+                                    />}
+                            />
                     }
                 </Content>
             </Container>
@@ -63,17 +73,18 @@ class Home extends Component {
     }
 }
 
-Home.propTypes = {
+SearchPodcasts.propTypes = {
     fetchPodcasts: PropTypes.func.isRequired,
+    setCurrentPodcast: PropTypes.func.isRequired,
     searchedPodcasts: PropTypes.array.isRequired,
+    navigation: PropTypes.object.isRequired,
 };
 
 const mapStateToProps = state => ({
     searchedPodcasts: state.searchedPodcasts,
 });
 
-const mapDispatchToProps = dispatch => ({
-    fetchPodcasts: terms => dispatch(fetchPodcasts(terms)),
-});
-
-export default connect(mapStateToProps, mapDispatchToProps)(Home);
+export default connect(mapStateToProps, {
+    fetchPodcasts,
+    setCurrentPodcast,
+})(SearchPodcasts);
