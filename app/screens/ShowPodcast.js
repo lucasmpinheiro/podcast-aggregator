@@ -15,7 +15,7 @@ import {
 
 import PodcastDetails from '../components/podcast/PodcastDetails';
 
-class SearchPodcasts extends Component {
+class ShowPodcast extends Component {
     constructor(props) {
         super(props);
     }
@@ -48,7 +48,7 @@ class SearchPodcasts extends Component {
     }
 }
 
-SearchPodcasts.propTypes = {
+ShowPodcast.propTypes = {
     navigation: PropTypes.any,
     currentPodcast: PropTypes.object,
 };
@@ -57,4 +57,4 @@ const mapStateToProps = state => ({
     currentPodcast: state.currentPodcast,
 });
 
-export default connect(mapStateToProps)(SearchPodcasts);
+export default connect(mapStateToProps)(ShowPodcast);
